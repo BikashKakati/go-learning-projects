@@ -61,6 +61,8 @@ func (todoList *TodoList) toggleTodo(id int) error {
 	if !isCompleted {
 		completionTime := time.Now()
 		t[id].CompletedAt = &completionTime
+	} else {
+		t[id].CompletedAt = nil
 	}
 
 	t[id].Completed = !isCompleted
